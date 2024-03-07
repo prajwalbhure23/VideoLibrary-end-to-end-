@@ -10,7 +10,7 @@ export function UserDashboard(){
     let navigate = useNavigate();
 
     function LoadVideos(){
-        axios.get('http://127.0.0.1:2200/videos')
+        axios.get('https://videolibrary-end-to-end.onrender.com/videos')
         .then(response=>{
             setVideos(response.data);
         })

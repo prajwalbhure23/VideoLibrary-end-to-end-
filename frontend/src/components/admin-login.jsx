@@ -30,7 +30,7 @@ export function AdminLogin(){
     })
 
     useEffect(()=>{
-        axios.get('http://127.0.0.1:2200/admin')
+        axios.get('https://videolibrary-end-to-end.onrender.com/admin')
         .then((response)=>{
             setUsers(response.data);
         })

@@ -10,7 +10,7 @@ export function UserRegister(){
     const [userError, setUserError] = useState('');
 
     useEffect(()=>{
-        axios.get('http://127.0.0.1:2200/users')
+        axios.get('https://videolibrary-end-to-end.onrender.com/users')
         .then(response => {
             setUsers(response.data);
         })
@@ -28,7 +28,7 @@ export function UserRegister(){
             Mobile: ''
         },
         onSubmit: (user) => {
-            axios.post('http://127.0.0.1:2200/adduser', user);
+            axios.post('https://videolibrary-end-to-end.onrender.com/adduser', user);
             alert('Registered Successfully..');
             navigate('/userlogin');
         }

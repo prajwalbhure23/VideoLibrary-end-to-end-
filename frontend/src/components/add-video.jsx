@@ -19,14 +19,14 @@ export function AddVideo(){
             Category_Id:0
         },
         onSubmit : (values)=>{
-            axios.post('http://127.0.0.1:2200/addvideo', values);
+            axios.post('https://videolibrary-end-to-end.onrender.com/addvideo', values);
             alert('Video Added Successfully..');
             navigate('/admindashboard');
         }
     })
 
     function LoadCategories(){
-        axios.get('http://127.0.0.1:2200/categories')
+        axios.get('https://videolibrary-end-to-end.onrender.com/categories')
         .then(response=>{
             response.data.unshift({Category_Id:-1, CategoryName:'Select Category'});
             setCategories(response.data);
