@@ -24,7 +24,7 @@ export function EditVideo(){
         },
         enableReinitialize: true,
         onSubmit: (values) => {
-            axios.put(`https://videolibrary-end-to-end.onrender.com/${params.id}`,values);
+            axios.put(`https://videolibrary-end-to-end.onrender.com/editvideo/${params.id}`,values);
             alert('Video Updated..');
             navigate('/admindashboard');
         }
