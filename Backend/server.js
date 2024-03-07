@@ -169,5 +169,11 @@ app.delete("/deletevideo/:id", (req, res)=>{
     })
 });
 
+app.get('/', (req,res)=>{
+    res.status(200).send({
+        "message": "node server"
+    })
+});
+
 app.listen(2200);
 console.log(`Server Started : http://127.0.0.1:2200`);
