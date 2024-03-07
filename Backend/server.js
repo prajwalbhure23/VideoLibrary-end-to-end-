@@ -1,6 +1,5 @@
 var express = require("express");
 var cors = require("cors");
-const path = require('path')
 var mongoClient = require("mongodb").MongoClient;
 
 
@@ -11,11 +10,6 @@ app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, './frontend/dist')));
-
-app.get('*', function(req,res){
-    res.sendFile(path.join(__dirname, './frontend/dist/index.html'))
-})
 
 app.get("/admin", (req, res)=>{
     mongoClient.connect(conString).then((clientObj)=>{
