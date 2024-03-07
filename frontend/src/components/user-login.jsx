@@ -40,7 +40,7 @@ export function UserLogin(){
 
     return(
         <div className="d-flex justify-content-center align-items-center h-100" style={{height: '90vh'}}>
-            
+            <div>
             <form onSubmit={formik.handleSubmit}>
             <h3>User Login</h3>
                 <dl>
@@ -53,6 +53,7 @@ export function UserLogin(){
                 <Link to="/uregister" className="btn btn-success ms-2">New User ? </Link>
                 <p className="h4 text-danger">{userError}</p>
             </form>
+            </div>
         </div>
     )
 }

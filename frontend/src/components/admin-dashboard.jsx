@@ -2,6 +2,7 @@ import { useCookies } from "react-cookie"
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import './admin-dashboard.css'
 
 
 export function AdminDashBoard(){
@@ -32,7 +33,7 @@ export function AdminDashBoard(){
             <div className="mb-4">
                 <Link to="/addvideo" className="btn btn-primary">New Video</Link>
             </div>
-            <table className="table table-hover">
+            <table className="table table-hover table-style">
                 <thead>
                     <tr>
                         <th>Title</th>

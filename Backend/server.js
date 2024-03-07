@@ -1,13 +1,21 @@
 var express = require("express");
 var cors = require("cors");
+const path = require('path')
 var mongoClient = require("mongodb").MongoClient;
 
-var conString = "mongodb://127.0.0.1:27017";
+
+var conString = "mongodb+srv://prajwalbhure23:cSWLPLpUTZWc9sy5@cluster0.g8bnbd5.mongodb.net/VideoLib?retryWrites=true&w=majority&appName=Cluster0";
 
 var app = express();
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, './frontend/dist')));
+
+app.get('*', function(req,res){
+    res.sendFile(path.join(__dirname, './frontend/dist/index.html'))
+})
 
 app.get("/admin", (req, res)=>{
     mongoClient.connect(conString).then((clientObj)=>{
@@ -62,8 +70,7 @@ app.get("/video/:id", (req, res)=>{
     });
 });
 
-app.post("/adduser", (req, res)=>{
-
+app.post("/adduser", async (req, res)=>{
     var user = {
         UserId: req.body.UserId,
         UserName: req.body.UserName,

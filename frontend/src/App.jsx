@@ -37,7 +37,7 @@ function App() {
 
 
   return (
-    <div className='container-fluid bg-dark text-light' style={{height:'100vh'}}>
+    <div className='container-fluid bg-dark text-light' style={{height:'100vh', width: '100%'}}>
       <BrowserRouter>
          <header className='p-2 d-flex justify-content-between'>
             <div>
@@ -45,9 +45,9 @@ function App() {
             </div>
             <div>
                {
-                  (cookies['userName']===undefined) ? <Link className='btn btn-light me-2' to='/userlogin'>User Signin</Link> : <SignoutComponent/>
+                  (cookies['userName']===undefined) ? <Link className='btn btn-light me-2' to='/userlogin'>User </Link> : <SignoutComponent/>
                }
-               <Link to="/adminlogin" className='btn btn-light'> <span className='bi bi-person-fill'></span> Admin Dashboard </Link>
+               <Link to="/adminlogin" className='btn btn-light'> <span className='bi bi-person-fill'></span> Admin </Link>
             </div>
          </header>
          <section>
