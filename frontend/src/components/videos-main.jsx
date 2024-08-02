@@ -20,7 +20,7 @@ export function VideosMain(){
  
  
     useEffect(()=>{
-       axios.get('https://videolibrary-end-to-end.onrender.com/users')
+       axios.get('https://videolibrary-end-to-end-1.onrender.com/users')
        .then(response => {
            setUsers(response.data);
        })
