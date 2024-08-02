@@ -19,7 +19,7 @@ export function AddVideo(){
             Category_Id:0
         },
         onSubmit : (values)=>{
-            axios.post('https://videolibrary-end-to-end.onrender.com/addvideo', values);
+            axios.post('https://videolibrary-end-to-end-1.onrender.com/addvideo', values);
             alert('Video Added Successfully..');
             navigate('/admindashboard');
         }
