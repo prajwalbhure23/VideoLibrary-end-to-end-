@@ -24,14 +24,14 @@ export function EditVideo(){
         },
         enableReinitialize: true,
         onSubmit: (values) => {
-            axios.put(`https://videolibrary-end-to-end.onrender.com/editvideo/${params.id}`,values);
+            axios.put(`https://videolibrary-end-to-end-1.onrender.com/${params.id}`,values);
             alert('Video Updated..');
             navigate('/admindashboard');
         }
     })
 
     function LoadCategories(){
-        axios.get('https://videolibrary-end-to-end.onrender.com/categories')
+        axios.get('https://videolibrary-end-to-end-1.onrender.com/categories')
         .then(response=>{
             response.data.unshift({Category_Id:-1, CategoryName:'Select Category'});
             setCategories(response.data);
@@ -40,7 +40,7 @@ export function EditVideo(){
 
     useEffect(()=>{
         LoadCategories();
-        axios.get(`https://videolibrary-end-to-end.onrender.com/video/${params.id}`)
+        axios.get(`https://videolibrary-end-to-end-1.onrender.com/video/${params.id}`)
         .then(response=>{
             setVideos(response.data);
         })
