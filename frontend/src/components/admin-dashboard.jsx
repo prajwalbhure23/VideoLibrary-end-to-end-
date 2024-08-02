@@ -12,7 +12,7 @@ export function AdminDashBoard(){
     let navigate = useNavigate();
 
     function LoadVideos(){
-        axios.get('https://videolibrary-end-to-end.onrender.com/videos')
+        axios.get('https://videolibrary-end-to-end-1.onrender.com/videos')
         .then(response=>{
             setVideos(response.data);
         })
