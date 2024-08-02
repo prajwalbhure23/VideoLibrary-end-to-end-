@@ -28,7 +28,7 @@ export function AdminRegister(){
             Mobile: ''
         },
         onSubmit: (admin) => {
-            axios.post('https://videolibrary-end-to-end.onrender.com/addadmin', admin);
+            axios.post('https://videolibrary-end-to-end-1.onrender.com/addadmin', admin);
             alert('Registered Successfully..');
             navigate('/adminlogin');
         }
